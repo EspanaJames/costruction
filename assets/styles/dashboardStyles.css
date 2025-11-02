@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.titleSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+  height: 4vh;
+  width: 100%;
+  overflow: hidden;
+}
+.titleSection::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: black;
+  z-index: 10;
+}
+.titleSection .navBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  height: 100%;
+  width: 100%;
+  margin-left: 1vw;
+}
+.titleSection .navBar .titleDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 6vw;
+  gap: 10px;
+}
+.titleSection .navBar .titleDiv img {
+  height: 100%;
+  width: 100%;
+}
+.titleSection .navBar .titleDiv h1 {
+  font-size: 1.2rem;
+}
+.titleSection .navBar .buttonDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: 6vw;
+  gap: 10px;
+  margin-right: 15px;
+}
+.titleSection .navBar .buttonDiv .navButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 2vh;
+  width: 1.5vw;
+  border: 1px solid black;
+}
