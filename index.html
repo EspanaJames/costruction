@@ -3,14 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="30" />
-    <meta name="author" content="James España & Zoe Gerard Brillantes" />
-    <title>Costruction</title>
-    <link rel="stylesheet" href="/assets/styles/indexStyles.css" />
+    <meta name="author" content="James España" />
+    <link rel="stylesheet" href="./assets/styles/indexStyles.css" />
+    <title>TEMPLATE</title>
   </head>
   <body>
-    <section class="formContainer">
-      <form action=""></form>
-    </section>
+    <header>
+      <nav class="navBar">
+        <span>
+          <img src="./assets/images/COSTRUCTION.png" alt="logo" />
+          <h1>COSTRUCTION</h1>
+        </span>
+        <button>
+          <img src="" alt="home icon" />
+          REGISTER
+        </button>
+      </nav>
+    </header>
+    <main class="contentContainer">
+      <section class="heroSection"></section>
+      <section class="formSection">
+        <form action="">
+          <span>
+            <img src="./assets/images/COSTRUCTION.png" alt="logo" />
+            <h4>Costruction</h4>
+          </span>
+          <div class="inputGroup">
+            <input
+              id="User"
+              name="User"
+              type="text"
+              placeholder="Username"
+              spellcheck="false"
+              inputmode="text"
+              required
+            />
+            <div class="passwordField">
+              <input
+                id="pass"
+                name="pass"
+                type="password"
+                placeholder="Password"
+                spellcheck="false"
+                inputmode="text"
+                required
+              /><br />
+              <span class="passwordOverlay" aria-hidden="true"></span>
+              <button
+                type="button"
+                id="viewPass"
+                class="viewPassword"
+                aria-checked="false"
+              >
+                <img
+                  src="./assets/images/unview.png"
+                  alt="icon"
+                  id="viewIcon"
+                />
+              </button>
+            </div>
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="./src/functions/showPassword.js" defer></script>
   </body>
 </html>
