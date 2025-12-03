@@ -129,6 +129,7 @@ header .navBar h1 {
   gap: 20px;
   align-items: center;
   position: relative;
+  user-select: none;
 }
 
 .formSection form > span {
@@ -146,6 +147,8 @@ header .navBar h1 {
 }
 .formSection form > span > h4 {
   user-select: none;
+  user-select: none;
+  font-size: 1.3rem;
 }
 .inputGroup {
   width: 100%;
@@ -366,4 +369,35 @@ footer {
   animation: sunsetMove 6s ease infinite;
   height: 0.5vh;
   width: 100%;
+}
+.formExtras {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-top: -10px;
+  font-size: 0.95rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  user-select: none;
+}
+
+.formExtras p {
+  margin: 0;
+  color: #222;
+  opacity: 0.85;
+}
+
+.formExtras .registerLink {
+  text-decoration: none;
+  color: #ff7e5f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.formExtras .registerLink:hover {
+  color: #ff6a88;
+  transform: translateY(-1px);
+  text-shadow: 0 0 6px rgba(255, 118, 118, 0.3);
 }

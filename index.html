@@ -14,24 +14,20 @@
           <img src="./assets/images/COSTRUCTION.png" alt="logo" />
           <h1>COSTRUCTION</h1>
         </span>
-        <button>
-          <img src="" alt="home icon" />
-          REGISTER
-        </button>
       </nav>
     </header>
     <main class="contentContainer">
       <section class="heroSection"></section>
       <section class="formSection">
-        <form action="">
+        <form id="loginForm" action="/login.php" method="POST" novalidate>
           <span>
             <img src="./assets/images/COSTRUCTION.png" alt="logo" />
-            <h4>Costruction</h4>
+            <h4>WELCOME TO Costruction!</h4>
           </span>
           <div class="inputGroup">
             <input
               id="User"
-              name="User"
+              name="username"
               type="text"
               placeholder="Username"
               spellcheck="false"
@@ -41,7 +37,7 @@
             <div class="passwordField">
               <input
                 id="pass"
-                name="pass"
+                name="password"
                 type="password"
                 placeholder="Password"
                 spellcheck="false"
@@ -63,7 +59,11 @@
               </button>
             </div>
           </div>
-          <button type="submit">LOGIN</button>
+          <button type="submit" class="login-button">LOGIN</button>
+          <div class="formExtras">
+            <p>Don't have an account?</p>
+            <a href="#" class="registerLink">Register</a>
+          </div>
         </form>
       </section>
     </main>

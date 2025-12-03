@@ -5,7 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: "sampleFont";
+  src: url("../fonts/AirtravelerspersonaluseBdit-gxgyE.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -21,16 +26,36 @@ body {
   height: 4vh;
   width: 100%;
   overflow: hidden;
+  user-select: none;
 }
 .titleSection::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 100vw;
-  height: 1px;
-  background-color: black;
-  z-index: 10;
+  left: 0;
+  height: 0.8vh;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #ffcc33 17.5%,
+    #ffb347 35%,
+    #ff7e5f 52.5%,
+    #ff6a88 70%,
+    #c471ed 87.5%,
+    #ffcc33 100%
+  );
+  background-size: 300% 100%;
+  animation: sunsetMove 10s ease-in-out infinite alternate;
+  clip-path: polygon(0 50%, 100% 100%, 0 100%);
+  user-select: none;
+}
+@keyframes sunsetMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 .titleSection .navBar {
   display: flex;
@@ -42,6 +67,7 @@ body {
   height: 100%;
   width: 100%;
   margin-left: 1vw;
+  user-select: none;
 }
 .titleSection .navBar .titleDiv {
   display: flex;
@@ -50,15 +76,19 @@ body {
   align-items: center;
   justify-content: center;
   height: 70%;
-  width: 6vw;
-  gap: 10px;
+  width: 20vw;
+  gap: 2px;
+  user-select: none;
 }
 .titleSection .navBar .titleDiv img {
   height: 100%;
-  width: 100%;
+  width: auto;
+  user-select: none;
 }
 .titleSection .navBar .titleDiv h1 {
-  font-size: 1.2rem;
+  width: 100%;
+  font-size: 2rem;
+  user-select: none;
 }
 .titleSection .navBar .buttonDiv {
   display: flex;
@@ -70,22 +100,117 @@ body {
   width: 6vw;
   gap: 10px;
   margin-right: 15px;
+  justify-content: center;
+  gap: 0.6rem;
 }
 .titleSection .navBar .buttonDiv .navButtons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: inline-flex;
   align-items: center;
-  height: 2vh;
-  width: 1.5vw;
-  border: 1px solid black;
+  justify-content: center;
+  width: clamp(18px, 3vw, 24px);
+  height: clamp(18px, 3vw, 24px);
+  background: linear-gradient(135deg, #ff9a3d, #ff5f6d);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(255, 94, 98, 0.3);
+  transition: transform 0.15s ease-in-out, box-shadow 0.25s ease,
+    background 0.3s ease;
+  outline: none;
+  user-select: none;
+}
+@keyframes sunsetMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.titleDiv > h1 {
+  display: inline-block;
+  width: 100%;
+  font-family: "sampleFont", sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  user-select: none;
+}
+.titleSection .navBar .buttonDiv .navButtons:focus {
+  outline: none;
+  box-shadow: 0 0 0 0 transparent;
+}
+.titleSection .navBar .buttonDiv .navButtons::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.titleSection .navBar .buttonDiv .navButtons:hover::before {
+  opacity: 1;
+}
+.navButtons.active {
+  background: linear-gradient(135deg, #ff7e5f, #ff3b5f);
+  transform: translateY(3px) scale(0.98);
+  box-shadow: 0 3px 10px rgba(255, 75, 90, 0.6);
+}
+.titleSection .navBar .buttonDiv .navButtons:hover {
+  background: linear-gradient(135deg, #ffa94d, #ff758c);
+  box-shadow: 0 10px 25px rgba(255, 118, 118, 0.45);
+  transform: translateY(-2px);
+}
+.titleSection .navBar .buttonDiv .navButtons img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+.titleSection .navBar .buttonDiv .navButtons:hover img {
+  transform: scale(1.1);
+  user-select: none;
+}
+@keyframes jellyHover {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.12, 0.9);
+  }
+  50% {
+    transform: scale(0.9, 1.12);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 .contentSection {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(32, 1fr);
+  grid-template-columns: repeat(32, 1fr);
   height: 95vh;
   width: 99vw;
   margin: 5px auto;
   border: 1px solid black;
+  user-select: none;
 }
